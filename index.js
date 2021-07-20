@@ -1,5 +1,20 @@
 // simular base de datos
 let productos = [{ name: "papitas" }, { name: "agua" }];
+let provedores = [
+  {
+    nombre: "provedor1",
+    contacto: {
+      area: "ventas",
+      telefono: "123",
+    },
+    direccion: {
+      calle: "calle 1",
+      ciudad: "ciudad1",
+      cp: "8000",
+      colonia: "colonia1",
+    },
+  },
+];
 
 //1 importamos el paquete
 const express = require("express");
