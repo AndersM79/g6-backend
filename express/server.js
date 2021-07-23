@@ -4,7 +4,6 @@ const serverless = require('serverless-http');
 const bodyParser = require('body-parser');
 
 const cors = require('cors')
-app.use(cors())
 
 let productos = [
    {
@@ -30,6 +29,7 @@ const router = express.Router();
 router.get('/', (req, res) => res.send({"hola": "hola"}));
 router.get('/productos', (req, res) => res.send(productos));
 
+app.use(cors());
 app.use(bodyParser.json());
 app.use('/.netlify/functions/server', router);  // path must route to lambda
 
