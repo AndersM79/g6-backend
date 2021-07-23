@@ -3,7 +3,23 @@ const path = require('path');
 const serverless = require('serverless-http');
 const bodyParser = require('body-parser');
 
-let productos = [{ name: "papitas" }, { name: "agua" }];
+let productos = [
+   {
+    isActive: true,
+    product_name: "Papitas",
+    description: "Papitas con chile",
+    price: 16,
+    category: "Comida",
+    brand: "Sasbritas",
+    _id: "5fbc19a65a3f794d72471163",
+    sku: "e9cbfac1-301a-42c3-b94a-711a39dc7ed1",
+    createdAt: "2020-11-23T20:20:54.245Z",
+    updatedAt: "2020-11-23T20:20:54.245Z",
+    __v: 0,
+    image:
+      "https://lacasa33.com/ve/img/inventory/910367/910367p1.jpg",
+  },
+];
 
 const app = express();
  
