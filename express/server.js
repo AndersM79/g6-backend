@@ -3,6 +3,9 @@ const path = require('path');
 const serverless = require('serverless-http');
 const bodyParser = require('body-parser');
 
+const cors = require('cors')
+app.use(cors())
+
 let productos = [
    {
     isActive: true,

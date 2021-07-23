@@ -17,7 +17,9 @@
     "url": "https://github.com/AndersM79/g6-backend/issues"
   },
   "homepage": "https://github.com/AndersM79/g6-backend#readme",
-  "dependencies": {},
+  "dependencies": {
+    "cors": "^2.8.5"
+  },
   "devDependencies": {
     "body-parser": "^1.19.0",
     "express": "^4.17.1",
