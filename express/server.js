@@ -17,13 +17,14 @@ const router = express.Router();
 router.get("/", (req, res) => res.send({ hola: "hola" }));
 router.get("/productos", (req, res) => res.send(productos));
 
+// -- Inicia Ejemplo
 // app
 //    1. router
 //        1.1  /   ---- > /.netlify/functions/server
 //        1.2 /productos ---- > /.netlify/functions/server/productos
 //    2. /
-
 // app.get("/") ----> 2
+// -- Fin ejemplo
 
 // PASO 4: incluye funcionalidades que express no trae por defecto
 app.use(cors());
