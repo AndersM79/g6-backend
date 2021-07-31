@@ -1,37 +1,36 @@
-const express = require('express');
-const path = require('path');
-const serverless = require('serverless-http');
-const bodyParser = require('body-parser');
+// PASO 1:  importar las dependencias o paquetes a utilizar
+const express = require("express");
+const path = require("path");
+const serverless = require("serverless-http");
+const bodyParser = require("body-parser");
+const cors = require("cors");
+const datos = require("./productos.json");
 
-const cors = require('cors');
+// PASO 1.1: definir constantes y datos iniciales
+let productos = datos.prodcutos;
 
-let productos = [
-   {
-    isActive: true,
-    product_name: "Papitas",
-    description: "Papitas con chile",
-    price: 16,
-    category: "Comida",
-    brand: "Sasbritas",
-    _id: "5fbc19a65a3f794d72471163",
-    sku: "e9cbfac1-301a-42c3-b94a-711a39dc7ed1",
-    createdAt: "2020-11-23T20:20:54.245Z",
-    updatedAt: "2020-11-23T20:20:54.245Z",
-    __v: 0,
-    image:
-      "https://lacasa33.com/ve/img/inventory/910367/910367p1.jpg",
-  },
-];
-
+// PASO 2: Generas una aplicacion de express
 const app = express();
- 
-const router = express.Router();
-router.get('/', (req, res) => res.send({"hola": "hola"}));
-router.get('/productos', (req, res) => res.send(productos));
 
+// PASO3: se define una sub aplicacion de express con sus respectivas rutas.
+const router = express.Router();
+router.get("/", (req, res) => res.send({ hola: "hola" }));
+router.get("/productos", (req, res) => res.send(productos));
+
+// app
+//    1. router
+//        1.1  /   ---- > /.netlify/functions/server
+//        1.2 /productos ---- > /.netlify/functions/server/productos
+//    2. /
+
+// app.get("/") ----> 2
+
+// PASO 4: incluye funcionalidades que express no trae por defecto
 app.use(cors());
 app.use(bodyParser.json());
-app.use('/.netlify/functions/server', router);  // path must route to lambda
+app.use("/.netlify/functions/server", router); // path must route to lambda
 
+// PASO 5: exportarmos la aplicacion
 module.exports = app;
+// PASO 6: exporta el servidor express en funcion
 module.exports.handler = serverless(app);
