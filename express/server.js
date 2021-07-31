@@ -7,7 +7,7 @@ const cors = require("cors");
 const datos = require("./productos.json");
 
 // PASO 1.1: definir constantes y datos iniciales
-let productos = datos.prodcutos;
+let productos = datos.productos;
 
 // PASO 2: Generas una aplicacion de express
 const app = express();
