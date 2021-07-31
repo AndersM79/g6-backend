@@ -29,7 +29,7 @@ router.get("/productos", (req, res) => res.send(productos));
 // PASO 4: incluye funcionalidades que express no trae por defecto
 app.use(cors());
 app.use(bodyParser.json());
-app.use("/.netlify/functions/test", router); // path must route to lambda
+app.use("/.netlify/functions/server", router); // path must route to lambda
 
 // PASO 5: exportarmos la aplicacion
 module.exports = app;
