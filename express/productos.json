@@ -2,17 +2,17 @@
   "productos": [
     {
       "isActive": true,
-      "product_name": "Papitas",
-      "description": "Papitas con chile",
+      "product_name": "Datejust 31",
+      "description": "El reloj clasico de referencia",
       "price": 16,
-      "category": "Comida",
-      "brand": "Sasbritas",
+      "category": "relojes",
+      "brand": "rolex",
       "_id": "5fbc19a65a3f794d72471163",
       "sku": "e9cbfac1-301a-42c3-b94a-711a39dc7ed1",
       "createdAt": "2020-11-23T20:20:54.245Z",
       "updatedAt": "2020-11-23T20:20:54.245Z",
       "__v": 0,
-      "image": "https://lacasa33.com/ve/img/inventory/910367/910367p1.jpg"
+      "image": "https://images.unsplash.com/photo-1587925358603-c2eea5305bbc?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=634&q=80"
     }
   ]
 }
