@@ -14,8 +14,20 @@ const app = express();
 
 // PASO3: se define una sub aplicacion de express con sus respectivas rutas.
 const router = express.Router();
-router.get("/", (req, res) => res.send({ hola: "hola" }));
+
 router.get("/productos", (req, res) => res.send(productos));
+router.get("/productos/:categoria", (req, res) => {
+  const categoriaProducto = req.params.categoria;
+  const filtro = productos.filter(
+    (producto) => producto.category === categoriaProducto
+  );
+  res.send(filtro);
+});
+router.get("/productos/detalle/:id", (req, res) => {
+  const idProducto = req.params.id;
+  const filtro = productos.find((producto) => producto._id === idProducto);
+  res.send(filtro);
+});
 
 // -- Inicia Ejemplo
 // app
