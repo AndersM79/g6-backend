@@ -4,7 +4,7 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "build": "netlify-lambda build express",
+    "build": "netlify-lambda build src",
     "start": "nodemon index.js"
   },
   "repository": {
@@ -18,7 +18,8 @@
   },
   "homepage": "https://github.com/AndersM79/g6-backend#readme",
   "dependencies": {
-    "cors": "^2.8.5"
+    "cors": "^2.8.5",
+    "firebase-admin": "^9.11.0"
   },
   "devDependencies": {
     "body-parser": "^1.19.0",

@@ -4,30 +4,13 @@ const path = require("path");
 const serverless = require("serverless-http");
 const bodyParser = require("body-parser");
 const cors = require("cors");
-const datos = require("./productos.json");
+
+const productRoutes = require("./api/productos");
 
 // PASO 1.1: definir constantes y datos iniciales
-let productos = datos.productos;
 
 // PASO 2: Generas una aplicacion de express
 const app = express();
-
-// PASO3: se define una sub aplicacion de express con sus respectivas rutas.
-const router = express.Router();
-
-router.get("/productos", (req, res) => res.send(productos));
-router.get("/productos/:categoria", (req, res) => {
-  const categoriaProducto = req.params.categoria;
-  const filtro = productos.filter(
-    (producto) => producto.category === categoriaProducto
-  );
-  res.send(filtro);
-});
-router.get("/productos/detalle/:id", (req, res) => {
-  const idProducto = req.params.id;
-  const filtro = productos.find((producto) => producto._id === idProducto);
-  res.send(filtro);
-});
 
 // -- Inicia Ejemplo
 // app
@@ -41,7 +24,7 @@ router.get("/productos/detalle/:id", (req, res) => {
 // PASO 4: incluye funcionalidades que express no trae por defecto
 app.use(cors());
 app.use(bodyParser.json());
-app.use("/.netlify/functions/server", router); // path must route to lambda
+app.use("/.netlify/functions/server", productRoutes); // path must route to lambda
 
 // PASO 5: exportarmos la aplicacion
 module.exports = app;
